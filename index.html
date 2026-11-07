@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#f8f5ec">
+<title>Numan &amp; Simrah | Wedding Invitation</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Great+Vibes&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap');
+:root{--green:#344b2b;--sage:#84947a;--gold:#b69a63;--cream:#faf7ef;--ink:#30352b}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--cream);color:var(--ink);font-family:'DM Sans',sans-serif;overflow-x:hidden}
+button{font:inherit}.intro{position:fixed;inset:0;z-index:50;display:grid;grid-template-columns:1fr 1fr;background:#273b27;perspective:1200px;transition:visibility 1s}
+.door{position:relative;background:linear-gradient(135deg,#52684a,#263b29 65%,#1c2c20);border:2px solid #c5ad76;box-shadow:inset 0 0 0 12px rgba(221,204,157,.12),inset 0 0 35px #132116;transition:transform 1.7s cubic-bezier(.7,0,.2,1);display:flex;align-items:center;justify-content:center}
+.door:before{content:"";position:absolute;inset:22px;border:1px solid rgba(220,202,151,.55)}
+.door:after{content:"";position:absolute;width:72%;height:72%;border:1px solid rgba(220,202,151,.3);border-radius:48% 48% 4px 4px}
+.door.left{transform-origin:left center}.door.right{transform-origin:right center}
+.door-knob{position:absolute;z-index:2;top:50%;width:13px;height:13px;border-radius:50%;background:#d7bd7e;box-shadow:0 0 0 5px rgba(215,189,126,.15)}
+.left .door-knob{right:20px}.right .door-knob{left:20px}
+.door-center{position:absolute;z-index:4;left:50%;top:50%;transform:translate(-50%,-50%);text-align:center;color:#f6efdE;width:min(90%,520px);transition:opacity .5s}
+.door-center .small{letter-spacing:.28em;text-transform:uppercase;font-size:10px}.door-center h1{font:clamp(40px,8vw,78px) 'Great Vibes';font-weight:400;margin:10px 0}.door-center p{font:italic 15px 'Playfair Display';letter-spacing:.08em}
+.open-btn{position:relative;overflow:hidden;margin-top:20px;border:1px solid #d7bd7e;color:#f8f1df;background:transparent;border-radius:40px;padding:13px 27px;letter-spacing:.15em;text-transform:uppercase;font-size:10px;cursor:pointer;transition:.3s}
+.open-btn:after{content:"";position:absolute;top:-50%;left:-70%;width:45%;height:200%;background:rgba(255,255,255,.25);transform:rotate(25deg);transition:left .7s ease}
+.open-btn:hover{background:#d7bd7e;color:#263b29}
+.open-btn:hover:after{left:130%}
+.intro.open .left{transform:rotateY(-105deg)}.intro.open .right{transform:rotateY(105deg)}.intro.open .door-center{opacity:0;pointer-events:none}.intro.gone{visibility:hidden;pointer-events:none}
+main{opacity:0;transition:opacity 1.2s ease}.ready main{opacity:1}
+.parallax{position:relative;isolation:isolate;overflow:hidden}.parallax:before,.parallax:after{content:"";position:absolute;z-index:-1;pointer-events:none;border:1px solid rgba(132,148,122,.35);border-radius:50%;width:360px;height:360px;transform:rotate(35deg)}
+.parallax:before{left:-220px;top:70px}.parallax:after{right:-230px;bottom:0;width:420px;height:420px}
+.hero{min-height:100svh;display:flex;align-items:center;justify-content:center;text-align:center;padding:80px 22px 65px;background:radial-gradient(ellipse at 50% 45%,#fffdf8 0,#f8f5ec 62%,#edf0e6 100%)}
+.hero:after{content:"";position:absolute;inset:18px;border:1px solid rgba(52,75,43,.35);pointer-events:none}
+.botanical{position:absolute;color:#83947b;opacity:.5;font-size:clamp(80px,17vw,190px);line-height:1;pointer-events:none;filter:blur(.1px);animation:botanicalFloat 8s ease-in-out infinite alternate}
+.botanical.one{--leaf-angle:35deg;top:0;left:-22px}.botanical.two{--leaf-angle:210deg;right:-25px;bottom:0;animation-delay:-4s}
+.hero-content{max-width:760px;position:relative;z-index:1;animation:rise 1.3s .2s both}
+.eyebrow{font-size:10px;letter-spacing:.32em;text-transform:uppercase;color:var(--sage)}
+.arabic{font-size:clamp(23px,4vw,35px);color:var(--green);margin:0 0 20px}
+.names{font:clamp(72px,13vw,132px)/.92 'Great Vibes';color:var(--green);margin:14px 0 4px}
+.and{font:italic 22px 'Playfair Display';color:var(--gold);margin:8px}
+.invite-line{font:italic 17px 'Playfair Display';margin:22px auto 30px;color:#626b59}
+.rule{height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);background-size:200% 100%;max-width:360px;margin:26px auto;animation:ruleShimmer 5s ease-in-out infinite}
+.date-line{font:italic 25px 'Playfair Display';color:var(--green);letter-spacing:.08em}
+.hero-sub{font-size:11px;letter-spacing:.22em;text-transform:uppercase;margin-top:12px;color:#69715f}
+.scroll-hint{position:absolute;bottom:22px;left:50%;transform:translateX(-50%);font-size:9px;letter-spacing:.25em;text-transform:uppercase;color:#7b846f;animation:hintFloat 2s ease-in-out infinite}
+.section{padding:100px 22px;position:relative}.section-inner{max-width:1000px;margin:auto;text-align:center}
+.section-kicker{font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:var(--sage)}
+.section-title{font:italic clamp(34px,6vw,58px) 'Playfair Display';font-weight:400;color:var(--green);margin:12px 0 18px}
+.countdown-section{background:#e9eee4}
+.countdown{display:flex;justify-content:center;gap:clamp(10px,4vw,40px);margin:35px auto 18px;flex-wrap:wrap}
+.time-box{min-width:85px;padding:20px 12px;border-top:1px solid var(--gold);border-bottom:1px solid var(--gold);transition:transform .35s ease,background-color .35s ease}
+.time-box:hover{transform:translateY(-5px);background:rgba(255,255,255,.35)}
+.time-box strong{display:block;font:clamp(36px,7vw,58px) 'Playfair Display';font-weight:400;color:var(--green);font-variant-numeric:tabular-nums}
+.time-box span{font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:#737d6c}
+.countdown-note{font:italic 15px 'Playfair Display';color:#69715f}
+.events{background:#fbf9f3}
+.event-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;margin-top:45px;text-align:left}
+.event-card{padding:34px 30px;background:rgba(255,255,255,.7);border:1px solid #d9dfd1;position:relative;box-shadow:0 14px 40px rgba(48,65,42,.05);transition:transform .4s ease,box-shadow .4s ease}
+.event-card:hover,.event-card:focus-within{transform:translateY(-7px);box-shadow:0 20px 46px rgba(48,65,42,.12)}
+.event-card:before{content:"";position:absolute;inset:8px;border:1px solid rgba(182,154,99,.35);pointer-events:none}
+.event-card h3{font:italic 42px 'Great Vibes';font-weight:400;color:var(--green);margin:0 0 12px}
+.event-date{font:17px 'Playfair Display';color:#565f4d}.event-time{font-size:11px;letter-spacing:.12em;color:var(--gold);text-transform:uppercase;margin:8px 0 20px}
+.event-place{font:italic 22px 'Playfair Display';color:var(--green);margin-bottom:8px}.event-address{font-size:12px;line-height:1.8;color:#687060}
+.map-link{display:inline-block;margin-top:18px;color:var(--green);font-size:10px;letter-spacing:.14em;text-transform:uppercase;text-decoration:none;border-bottom:1px solid var(--gold);padding-bottom:4px}
+.slider-section{background:#e9eee4}.slider{max-width:760px;margin:36px auto 0;position:relative;min-height:220px;display:flex;align-items:center;justify-content:center}
+.slide{display:none;width:100%;padding:42px 28px;background:#fbf9f3;border:1px solid #d7ddce;animation:fade .6s}.slide.active{display:block}
+.slide p{font:italic clamp(20px,3vw,29px)/1.55 'Playfair Display';color:var(--green);margin:0}
+.slider-controls{display:flex;justify-content:center;align-items:center;gap:18px;margin-top:22px}
+.slider-controls button{width:38px;height:38px;border:1px solid var(--sage);border-radius:50%;background:transparent;color:var(--green);cursor:pointer;transition:color .25s ease,background-color .25s ease,transform .25s ease}
+.slider-controls button:hover{background:var(--green);color:#fff;transform:scale(1.08)}
+.dots{display:flex;gap:8px}.dot{width:6px;height:6px;border-radius:50%;background:#c5cebd;transition:transform .3s ease,background-color .3s ease}.dot.active{background:var(--green);transform:scale(1.5)}
+.family{background:#fbf9f3}.family-note{font:italic 20px/1.7 'Playfair Display';max-width:700px;margin:25px auto;color:#59634f}
+.family-name{font:italic 24px 'Playfair Display';color:var(--green)}
+footer{padding:60px 20px;text-align:center;background:#2e442d;color:#f7f2e7}
+footer .names{font-size:64px;color:#f7f2e7}footer p{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:#d2d9ca}
+.reveal{opacity:0;transform:translateY(25px);transition:opacity .8s,transform .8s}.reveal.visible{opacity:1;transform:none}
+.reveal>*{opacity:0;transform:translateY(14px);transition:opacity .65s ease,transform .65s ease}
+.reveal.visible>*{opacity:1;transform:none}
+.reveal.visible>*:nth-child(2){transition-delay:.12s}.reveal.visible>*:nth-child(3){transition-delay:.24s}.reveal.visible>*:nth-child(4){transition-delay:.36s}.reveal.visible>*:nth-child(5){transition-delay:.48s}
+.reveal .event-card{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s ease,box-shadow .4s ease}
+.reveal.visible .event-card{opacity:1;transform:none}
+.reveal.visible .event-card:nth-child(2){transition-delay:.16s}
+.reveal.visible .event-card:hover,.reveal.visible .event-card:focus-within{transform:translateY(-7px)}
+@keyframes rise{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}@keyframes fade{from{opacity:0;transform:translateX(12px)}to{opacity:1;transform:none}}
+@keyframes botanicalFloat{from{transform:translateY(0) rotate(var(--leaf-angle))}to{transform:translateY(-14px) rotate(var(--leaf-angle))}}
+@keyframes hintFloat{0%,100%{transform:translate(-50%,0)}50%{transform:translate(-50%,-6px)}}
+@keyframes ruleShimmer{0%,100%{background-position:100% 0}50%{background-position:0 0}}
+@media(max-width:650px){.event-grid{grid-template-columns:1fr}.section{padding:75px 18px}.event-card{padding:28px 24px}.hero{min-height:92svh}.door-center .small{font-size:8px}.time-box{min-width:68px;padding:15px 8px}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<div class="intro" id="intro" aria-label="Wedding invitation doors">
+  <div class="door left"><span class="door-knob"></span></div>
+  <div class="door right"><span class="door-knob"></span></div>
+  <div class="door-center">
+    <div class="small">You are warmly invited</div>
+    <h1>Numan &amp; Simrah</h1>
+    <p>A celebration of love, family &amp; togetherness</p>
+    <button class="open-btn" id="openBtn">Open Invitation&nbsp; ✦</button>
+  </div>
+</div>
+<main>
+<section class="hero parallax" id="home">
+  <div class="botanical one" aria-hidden="true">❧</div><div class="botanical two" aria-hidden="true">❧</div>
+  <div class="hero-content" data-parallax="0.12">
+    <p class="arabic">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</p>
+    <div class="eyebrow">Together with their families</div>
+    <div class="names">Numan</div><div class="and">and</div><div class="names">Simrah</div>
+    <p class="invite-line">Request the honour of your presence as they celebrate their wedding.</p>
+    <div class="rule"></div>
+    <div class="date-line">5 &amp; 6 December 2026</div>
+    <div class="hero-sub">Mumbai, Maharashtra</div>
+  </div>
+  <div class="scroll-hint">Scroll to explore&nbsp; ↓</div>
+</section>
+
+<section class="section countdown-section parallax">
+  <div class="section-inner reveal">
+    <div class="section-kicker">The countdown begins</div>
+    <h2 class="section-title">Until our Nikah</h2>
+    <div class="countdown" aria-live="polite">
+      <div class="time-box"><strong id="days">--</strong><span>Days</span></div>
+      <div class="time-box"><strong id="hours">--</strong><span>Hours</span></div>
+      <div class="time-box"><strong id="minutes">--</strong><span>Minutes</span></div>
+      <div class="time-box"><strong id="seconds">--</strong><span>Seconds</span></div>
+    </div>
+    <p class="countdown-note" id="countdownNote">Counting down to 5 December 2026 · 7:30 PM IST</p>
+  </div>
+</section>
+
+<section class="section events" id="events">
+  <div class="section-inner reveal">
+    <div class="section-kicker">Save the dates</div><h2 class="section-title">The Wedding Celebrations</h2>
+    <p class="invite-line">We would be honoured to celebrate these special moments with you.</p>
+    <div class="event-grid">
+      <article class="event-card">
+        <h3>Nikah</h3><div class="event-date">Saturday, 5 December 2026</div>
+        <div class="event-time">7:30 in the evening</div>
+        <div class="event-place">Aqua Pearl</div>
+        <div class="event-address">Aqua Pearl, Suleman Mithai Wala House,<br>Next to Anjuman Islam Girls High School,<br>Bellasis Road, Mumbai Central, Mumbai – 8</div>
+        <a class="map-link" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Aqua+Pearl+Suleman+Mithai+Wala+House+Bellasis+Road+Mumbai">View location ↗</a>
+      </article>
+      <article class="event-card">
+        <h3>Walima</h3><div class="event-date">Sunday, 6 December 2026</div>
+        <div class="event-time">8:00 in the evening</div>
+        <div class="event-place">Sana Hall</div>
+        <div class="event-address">RCB Marg, opposite Noor Baug Hall,<br>Dongri, Umerkhadi,<br>Mumbai, Maharashtra 400009</div>
+        <a class="map-link" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Sana+Hall+RCB+Marg+Dongri+Mumbai">View location ↗</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section slider-section">
+  <div class="section-inner reveal">
+    <div class="section-kicker">A little note from us</div><h2 class="section-title">With love &amp; duas</h2>
+    <div class="slider" aria-live="polite">
+      <div class="slide active"><p>“Your presence and duas will mean the world to us.”</p></div>
+      <div class="slide"><p>“We look forward to celebrating this beautiful occasion with you.”</p></div>
+      <div class="slide"><p>“Two families, one beautiful beginning. Thank you for being part of our joy.”</p></div>
+    </div>
+    <div class="slider-controls">
+      <button id="prev" aria-label="Previous message">←</button><div class="dots" id="dots"></div><button id="next" aria-label="Next message">→</button>
+    </div>
+  </div>
+</section>
+
+<section class="section family">
+  <div class="section-inner reveal">
+    <div class="section-kicker">With the blessings of our families</div>
+    <h2 class="section-title">We can't wait to see you</h2>
+    <p class="family-note">Your love, blessings and duas will make our celebration even more special. We look forward to welcoming you and sharing these precious moments together.</p>
+    <div class="family-name">Abdulmajeed Ansari &amp; Family</div>
+  </div>
+</section>
+<footer><div class="names">Numan &amp; Simrah</div><p>With love · December 2026 · Mumbai</p></footer>
+</main>
+<script>
+const intro=document.getElementById('intro');
+document.getElementById('openBtn').addEventListener('click',()=>{
+  intro.classList.add('open');document.body.classList.add('ready');
+  setTimeout(()=>{intro.classList.add('gone');window.scrollTo(0,0)},1750);
+});
+function updateCountdown(){
+  // India Standard Time is UTC+05:30. Target: 5 Dec 2026, 7:30 PM IST.
+  const target= new Date('2026-12-05T19:30:00+05:30').getTime();
+  let diff=target-Date.now();
+  if(diff<=0){['days','hours','minutes','seconds'].forEach(id=>document.getElementById(id).textContent='00');document.getElementById('countdownNote').textContent='The celebrations have begun — thank you for being part of our joy!';return}
+  const d=Math.floor(diff/86400000);diff%=86400000;
+  const h=Math.floor(diff/3600000);diff%=3600000;
+  const m=Math.floor(diff/60000);const s=Math.floor((diff%60000)/1000);
+  document.getElementById('days').textContent=String(d).padStart(2,'0');
+  document.getElementById('hours').textContent=String(h).padStart(2,'0');
+  document.getElementById('minutes').textContent=String(m).padStart(2,'0');
+  document.getElementById('seconds').textContent=String(s).padStart(2,'0');
+}
+updateCountdown();setInterval(updateCountdown,1000);
+
+// Message slider
+const slides=[...document.querySelectorAll('.slide')],dots=document.getElementById('dots');let current=0;
+slides.forEach((_,i)=>{const b=document.createElement('button');b.className='dot'+(i===0?' active':'');b.setAttribute('aria-label','Show message '+(i+1));b.addEventListener('click',()=>show(i));dots.appendChild(b)});
+function show(i){current=(i+slides.length)%slides.length;slides.forEach((s,n)=>s.classList.toggle('active',n===current));[...dots.children].forEach((d,n)=>d.classList.toggle('active',n===current))}
+document.getElementById('prev').addEventListener('click',()=>show(current-1));document.getElementById('next').addEventListener('click',()=>show(current+1));
+let auto=setInterval(()=>show(current+1),5500);
+document.querySelector('.slider').addEventListener('mouseenter',()=>clearInterval(auto));
+
+// Gentle reveal + parallax
+const observer=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')}),{threshold:.15});
+document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+const reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+if(!reduce){window.addEventListener('scroll',()=>{document.querySelectorAll('[data-parallax]').forEach(el=>{const r=el.parentElement.getBoundingClientRect();el.style.transform=`translateY(${Math.max(-35,Math.min(35,-r.top*Number(el.dataset.parallax)))}px)`})},{passive:true})}
+</script>
+</body>
+</html>
