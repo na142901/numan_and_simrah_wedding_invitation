@@ -23,6 +23,10 @@ button{font:inherit}.intro{position:fixed;inset:0;z-index:50;display:grid;grid-t
 .open-btn:hover{background:#d7bd7e;color:#263b29}
 .open-btn:hover:after{left:130%}
 .intro.open .left{transform:rotateY(-105deg)}.intro.open .right{transform:rotateY(105deg)}.intro.open .door-center{opacity:0;pointer-events:none}.intro.gone{visibility:hidden;pointer-events:none}
+body {
+    -webkit-user-select: none;
+    user-select: none;
+}
 main{opacity:0;transition:opacity 1.2s ease}.ready main{opacity:1}
 .parallax{position:relative;isolation:isolate;overflow:hidden}.parallax:before,.parallax:after{content:"";position:absolute;z-index:-1;pointer-events:none;border:1px solid rgba(132,148,122,.35);border-radius:50%;width:360px;height:360px;transform:rotate(35deg)}
 .parallax:before{left:-220px;top:70px}.parallax:after{right:-230px;bottom:0;width:420px;height:420px}
@@ -55,7 +59,7 @@ main{opacity:0;transition:opacity 1.2s ease}.ready main{opacity:1}
 .event-card{padding:34px 30px;background:rgba(255,255,255,.7);border:1px solid #d9dfd1;position:relative;box-shadow:0 14px 40px rgba(48,65,42,.05);transition:transform .4s ease,box-shadow .4s ease}
 .event-card:hover,.event-card:focus-within{transform:translateY(-7px);box-shadow:0 20px 46px rgba(48,65,42,.12)}
 .event-card:before{content:"";position:absolute;inset:8px;border:1px solid rgba(182,154,99,.35);pointer-events:none}
-.event-card h3{font:italic 42px 'Great Vibes';font-weight:400;color:var(--green);margin:0 0 12px}
+.event-card h3{font:italic 42px 'Great Vibes';font-weight:400;color:var(--green);margin:0 0 12px;border-radius: 4px;}
 .event-date{font:17px 'Playfair Display';color:#565f4d}.event-time{font-size:11px;letter-spacing:.12em;color:var(--gold);text-transform:uppercase;margin:8px 0 20px}
 .event-place{font:italic 22px 'Playfair Display';color:var(--green);margin-bottom:8px}.event-address{font-size:12px;line-height:1.8;color:#687060}
 .map-link{display:inline-block;margin-top:18px;color:var(--green);font-size:10px;letter-spacing:.14em;text-transform:uppercase;text-decoration:none;border-bottom:1px solid var(--gold);padding-bottom:4px}
@@ -65,9 +69,10 @@ main{opacity:0;transition:opacity 1.2s ease}.ready main{opacity:1}
 .slider-controls{display:flex;justify-content:center;align-items:center;gap:18px;margin-top:22px}
 .slider-controls button{width:38px;height:38px;border:1px solid var(--sage);border-radius:50%;background:transparent;color:var(--green);cursor:pointer;transition:color .25s ease,background-color .25s ease,transform .25s ease}
 .slider-controls button:hover{background:var(--green);color:#fff;transform:scale(1.08)}
-.dots{display:flex;gap:8px}.dot{width:6px;height:6px;border-radius:50%;background:#c5cebd;transition:transform .3s ease,background-color .3s ease}.dot.active{background:var(--green);transform:scale(1.5)}
+.dots{display:flex;gap:15px}.dot{width:3px;height:3px;border-radius:50%;background:#c5cebd;transition:transform .3s ease,background-color .3s ease}.dot.active{background:var(--green);transform:scale(1.5)}
 .family{background:#fbf9f3}.family-note{font:italic 20px/1.7 'Playfair Display';max-width:700px;margin:25px auto;color:#59634f}
 .family-name{font:italic 24px 'Playfair Display';color:var(--green)}
+.ready{scroll-behavior:smooth;background-image:url(images/Green-floral-bg.avif)}
 footer{padding:60px 20px;text-align:center;background:#2e442d;color:#f7f2e7}
 footer .names{font-size:64px;color:#f7f2e7}footer p{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:#d2d9ca}
 .reveal{opacity:0;transform:translateY(25px);transition:opacity .8s,transform .8s}.reveal.visible{opacity:1;transform:none}
@@ -86,13 +91,13 @@ footer .names{font-size:64px;color:#f7f2e7}footer p{font-size:10px;letter-spacin
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation:none!important;transition:none!important}}
 </style>
 </head>
-<body>
+<body class="ready">
 <div class="intro" id="intro" aria-label="Wedding invitation doors">
   <div class="door left"><span class="door-knob"></span></div>
   <div class="door right"><span class="door-knob"></span></div>
   <div class="door-center">
     <div class="small">You are warmly invited</div>
-    <h1>Numan &amp; Simrah</h1>
+    <h1>Numan &amp; Simrah</h1><br>
     <p>A celebration of love, family &amp; togetherness</p>
     <button class="open-btn" id="openBtn">Open Invitation&nbsp; ✦</button>
   </div>
@@ -102,8 +107,12 @@ footer .names{font-size:64px;color:#f7f2e7}footer p{font-size:10px;letter-spacin
   <div class="botanical one" aria-hidden="true">❧</div><div class="botanical two" aria-hidden="true">❧</div>
   <div class="hero-content" data-parallax="0.12">
     <p class="arabic">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</p>
-    <div class="eyebrow">Together with their families</div>
-    <div class="names">Numan</div><div class="and">and</div><div class="names">Simrah</div>
+    <div class="eyebrow">Together with their families</div><br>
+    <div class="names">Numan</div>
+    <p class="invite-line">S/O. Mrs, & Mr, Feroz Ahmed Ansari.</p>
+    <div class="and">and</div>
+    <div class="names">Simrah</div>
+     <p class="invite-line">D/O. Mrs, & Mr, Shahid Akhtar Ansari.</p>
     <p class="invite-line">Request the honour of your presence as they celebrate their wedding.</p>
     <div class="rule"></div>
     <div class="date-line">5 &amp; 6 December 2026</div>
@@ -171,9 +180,36 @@ footer .names{font-size:64px;color:#f7f2e7}footer p{font-size:10px;letter-spacin
     <div class="family-name">Abdulmajeed Ansari &amp; Family</div>
   </div>
 </section>
-<footer><div class="names">Numan &amp; Simrah</div><p>With love · December 2026 · Mumbai</p></footer>
+<footer><div class="names">Numan &amp; Simrah</div><p>With love · 6th, December, 2026 · Mumbai</p><div><p>Contact:<a class="invite-line" href="tel:8655574849">8655574849</a></p></div></footer>
 </main>
 <script>
+  // Disable right-click context menu
+document.addEventListener('contextmenu', function(e) {
+    e.preventDefault();
+});
+// Block common developer tool shortcuts
+document.addEventListener('keydown', function(e) {
+
+    // F12
+    if (e.key === 'F12') {
+        e.preventDefault();
+        return false;
+    }
+
+    // Ctrl + Shift + I / J / C
+    if (e.ctrlKey && e.shiftKey &&
+        ['I', 'J', 'C'].includes(e.key.toUpperCase())) {
+        e.preventDefault();
+        return false;
+    }
+
+    // Ctrl + U (View Source)
+    if (e.ctrlKey && e.key.toUpperCase() === 'U') {
+        e.preventDefault();
+        return false;
+    }
+
+});
 const intro=document.getElementById('intro');
 document.getElementById('openBtn').addEventListener('click',()=>{
   intro.classList.add('open');document.body.classList.add('ready');
